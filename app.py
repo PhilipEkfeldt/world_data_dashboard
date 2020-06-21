@@ -10,6 +10,8 @@ import requests
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP],)
 
+server = app.server
+
 url = "http://api.worldbank.org/v2/country/all?format=json&per_page=600"
 req = requests.get(url)
 countries_df = pd.DataFrame.from_dict(
